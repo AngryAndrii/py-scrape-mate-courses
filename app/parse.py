@@ -40,7 +40,7 @@ def write_courser_to_csv(courses: list[Course]) -> None:
         writer.writerows([astuple(course) for course in courses])
 
 
-def main():
+def main() -> None:
     write_courser_to_csv(get_all_courses())
 
 
