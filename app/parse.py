@@ -33,15 +33,15 @@ def get_all_courses() -> list[Course]:
     return [parse_single_course(card) for card in cards]
 
 
-def write_courser_to_csv(courses: list[Course]) -> None:
-    with open("result.csv", "w") as file:
+def write_courses_to_csv(courses: list[Course]) -> None:
+    with open("result.csv", "w", newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
         writer.writerow(COURSE_FIELDS)
         writer.writerows([astuple(course) for course in courses])
 
 
 def main() -> None:
-    write_courser_to_csv(get_all_courses())
+    write_courses_to_csv(get_all_courses())
 
 
 if __name__ == "__main__":
